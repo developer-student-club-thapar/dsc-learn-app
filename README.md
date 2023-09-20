@@ -9,6 +9,7 @@ Welcome to the GDSC Learn App, your one-stop destination for acquiring a wide ra
 - [About GDSC Learn](#about-gdsc-learn)
 - [Features](#features)
 - [Getting Started](#getting-started)
+- [App Flow Chart](#flow-chart)
 - [Contributions](#contributing)
 - [Figma Link](#figma-design)
 - [Usage](#usage)
@@ -62,6 +63,41 @@ Once you've installed the GDSC Learn App, you can easily access all the features
 4. **Learn**: Complete lessons, assignments, and quizzes. Engage with the community and your fellow learners.
 
 5. **Track Progress**: Monitor your progress on your dashboard. Celebrate your achievements!
+
+## Flow Chart
+
+## Main Screen
+
+- Home Tab
+  - Popular Courses
+    - Course Details Page
+      - About Tab
+      - Lessons Tab
+      - Reviews Tab
+  - Ongoing Courses
+    - Course Details Page
+      - About Tab
+      - Lessons Tab
+      - Reviews Tab
+- My Courses Tab
+  - Ongoing Courses
+    - Course Details Page
+      - About Tab
+      - Lessons Tab
+      - Reviews Tab
+  - Completed Courses
+    - Course Details Page
+      - About Tab
+      - Lessons Tab
+      - Reviews Tab
+- Bookmarks Tab
+  - List of Bookmarked Courses
+    - Course Details Page
+      - About Tab
+      - Lessons Tab
+      - Reviews Tab
+- Profile Tab
+  - User Profile Information
 
 ## Contributing
 
