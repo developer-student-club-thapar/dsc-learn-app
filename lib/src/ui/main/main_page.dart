@@ -7,7 +7,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../routing/router.dart';
 
 import '../widgets/bottom_bar.dart';
-import 'notification_handler.dart';
 
 @RoutePage()
 class MainPage extends ConsumerStatefulWidget {
