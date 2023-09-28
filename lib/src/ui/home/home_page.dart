@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dsc_learn_app/src/constants/colors.dart';
+import 'package:dsc_learn_app/src/ui/home/widgets/category_list.dart';
 import 'package:dsc_learn_app/src/ui/widgets/course_tags.dart';
 import 'package:dsc_learn_app/src/utils/color_utils.dart';
 import 'package:flutter/material.dart';
@@ -26,85 +27,62 @@ class _HomePageState extends State<HomePage> {
         appBar: buildAppBar(),
         body: SingleChildScrollView(
           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 20, top: 10),
+                child: Text(
                   "Categories",
                   style: GoogleFonts.poppins(
                     fontSize: 22,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
-                Container( // Category buttons, need to evenly space it (possible with Row() Widget and selection MainAxisAlignment.spaceBetween)
-                  height: 120,
-                  alignment: Alignment.center,
-                  child: ListView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 4,
-                    itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor:
-                                        ColorUtils.generateMaterialColor(
-                                            categoryButtonColor),
-                                    shape: const CircleBorder(),
-                                    fixedSize: const Size.square(70)),
-                                onPressed: () {},
-                                child: const Icon(Icons.language)),
-                          ),
-                          Text("Web Dev",
-                              style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                              ))
-                        ],
-                      );
-                    },
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Text(
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Container(
+                // Category buttons, need to evenly space it (possible with Row() Widget and selection MainAxisAlignment.spaceBetween)
+                height: 120,
+                alignment: Alignment.center,
+                child: const CategoryList(),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, top: 10),
+                child: Text(
                   "Popular Course",
                   style: GoogleFonts.poppins(
                     fontSize: 22,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                const SizedBox(
-                  height: 210,
-                  child: PopularCourseCardList(), // Right padding issue
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
+              ),
+              const SizedBox(
+                height: 200,
+                child: PopularCourseCardList(), // Right padding issue
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, top: 10),
+                child: Text(
                   "Course Learning",
                   style: GoogleFonts.poppins(
                     fontSize: 22,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: OngoingCourseCard(progValue: _progValue),
-                  ),
+              ),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: OngoingCourseCard(progValue: _progValue),
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(
+                height: 30,
+              )
+            ],
           ),
         ));
   }
